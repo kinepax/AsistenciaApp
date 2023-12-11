@@ -22,19 +22,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Asistencia"
+            android:name=".activity.Asistencia.AsistenciaActivity"
             android:exported="false" />
         <activity
-            android:name=".registo_qr"
+            android:name=".activity.QR.QRregistroActivity"
             android:exported="false" />
         <activity
-            android:name=".Lector_QR"
+            android:name=".activity.QR.QRLectorActivity"
             android:exported="false" />
         <activity
-            android:name=".Asistencias"
+            android:name=".activity.Asistencia.AsistenciasActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

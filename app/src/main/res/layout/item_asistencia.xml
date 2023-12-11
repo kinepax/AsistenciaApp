@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+
+
+    <TextView
+        android:id="@+id/txtNombreAlumno"
+        android:layout_width="196dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="Jonathan Juan Puente de la Vega"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnQuitar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spAsistencia"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtNombreAlumno"
+        app:layout_constraintTop_toTopOf="@+id/txtNombreAlumno" />
+
+
+    <Button
+        android:id="@+id/btnQuitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quitar"
+
+        app:backgroundTint="@color/md_theme_light_error"
+        app:layout_constraintStart_toEndOf="@+id/spAsistencia"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

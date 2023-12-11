@@ -16,6 +16,11 @@ public class Alumno {
     private String fecha_registro;
 
 
+    public Alumno(){
+
+
+    }
+
     public Alumno(int id, String nombres, String apellido_paterno, String apellido_materno, String nacimiento, String nombre_apoderado, String celular, String estado, String fecha_registro) {
         this.id = id;
         this.nombres = nombres;

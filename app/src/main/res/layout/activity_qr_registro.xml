@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registo_qr">
+    android:layout_margin="10dp"
+    tools:context=".activity.QR.QRregistroActivity">
 
     <Button
         android:id="@+id/btnEscanear"
@@ -21,12 +22,24 @@
         android:id="@+id/txtEscaneado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEscanear"
-        android:layout_marginTop="50dp"
 
 
-        android:text="TextView" />
+        app:layout_constraintTop_toBottomOf="@id/btnEscanear" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:backgroundTint="@color/md_theme_dark_errorContainer"
+        android:text="Cerrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEscaneado"
+        app:layout_constraintVertical_bias="0.157" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

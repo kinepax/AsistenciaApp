@@ -19,4 +19,21 @@ public interface ApiUsuario {
 
     @POST("api2/usuario")
     Call<List<Usuario>> getUsuarios();
+
+
+
+
+
+/*
+    @POST("usuario?")
+    Call<List<Usuario>> getUsuario(
+            @Query("usuario") String usuario,
+            @Query("password") String password
+    );
+
+    @POST("usuario")
+    Call<List<Usuario>> getUsuarios();
+
+
+ */
 }

@@ -41,7 +41,7 @@ public class Registro_AsistenciaAdapter extends RecyclerView.Adapter<Registro_As
     public void onBindViewHolder(@NonNull Registro_AsistenciaViewHolder holder, int position) {
 
         Registro_Asistencia dataRegistros= registrosAsistencia.get(position);
-        holder.llenar(dataRegistros);
+        holder.llenar(dataRegistros,position+1);
 
 
     }

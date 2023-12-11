@@ -1,4 +1,4 @@
-package com.tomtech.colegio2;
+package com.tomtech.colegio2.activity.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.tomtech.colegio2.model.Registro_Asistencia;
+import com.tomtech.colegio2.R;
 import com.tomtech.colegio2.network.ApiClient;
-import com.tomtech.colegio2.network.ApiRegistrarAsistencia;
-import com.tomtech.colegio2.network.ApiRegistro;
+import com.tomtech.colegio2.network.ApiRegistrarAsistenciaDTO;
 
 import java.util.List;
 
@@ -20,9 +18,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class registo_qr extends AppCompatActivity {
+public class QRregistroActivity extends AppCompatActivity {
 
-    public static List<String> textos;
     public static TextView eTextos;
     public Button btnScanner;
     private boolean isButtonEnabled = true;
@@ -30,7 +27,7 @@ public class registo_qr extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registo_qr);
+        setContentView(R.layout.activity_qr_registro);
 
         eTextos = findViewById(R.id.txtEscaneado);
         btnScanner = findViewById(R.id.btnEscanear);
@@ -42,19 +39,12 @@ public class registo_qr extends AppCompatActivity {
         eTextos.setText(nombre_alumno);
 
 
-            Call<List<String>> call = ApiClient.getClient().create(ApiRegistrarAsistencia.class).setAsistencia(Integer.parseInt(nombre_alumno));
+            Call<List<String>> call = ApiClient.getClient().create(ApiRegistrarAsistenciaDTO.class).setAsistencia(Integer.parseInt(nombre_alumno));
 
             call.enqueue(new Callback<List<String>>() {
                 @Override
                 public void onResponse(Call<List<String>> call, Response<List<String>> response) {
                     if (response.isSuccessful()) {
-
-
-
-
-
-
-
 
                     }
                 }
@@ -74,7 +64,7 @@ public class registo_qr extends AppCompatActivity {
         if (isButtonEnabled) {
             isButtonEnabled = false;
             btnScanner.setEnabled(isButtonEnabled);
-            Intent intent = new Intent(this, Lector_QR.class);
+            Intent intent = new Intent(this, QRLectorActivity.class);
             startActivity(intent);
         }
     }

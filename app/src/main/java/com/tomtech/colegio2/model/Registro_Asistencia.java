@@ -1,5 +1,6 @@
 package com.tomtech.colegio2.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -10,20 +11,55 @@ public class Registro_Asistencia {
     private String asistencia;
 
     private Matricula matricula;
-    private String fecha;
+    private LocalDate fecha;
+    private String strfecha;
+
     private String hora;
     private String estado;
 
 
-    public Registro_Asistencia(int id, Alumno alumno, String asistencia, Matricula matricula, String fecha, String hora, String estado) {
+
+    public Registro_Asistencia(int id, Alumno alumno, Matricula matricula, String asistencia, String strfecha, String hora, String estado) {
+        this.id = id;
+        this.alumno = alumno;
+        this.matricula = matricula;
+        this.asistencia = asistencia;
+        this.strfecha = strfecha;
+        this.hora = hora;
+        this.estado = estado;
+    }
+
+
+
+    public Registro_Asistencia(int id,Alumno alumno, String asistencia, Matricula matricula, String strfecha,String estado) {
         this.id = id;
         this.alumno = alumno;
         this.asistencia = asistencia;
         this.matricula = matricula;
+        this.strfecha = strfecha;
+        this.estado = estado;
+
+    }
+
+
+    public Registro_Asistencia(Alumno alumno, String asistencia, Matricula matricula, LocalDate fecha,String estado) {
+        this.alumno = alumno;
+        this.asistencia = asistencia;
+        this.matricula = matricula;
         this.fecha = fecha;
-        this.hora = hora;
+        this.estado = estado;
+
+    }
+
+    public Registro_Asistencia(Alumno alumno, String asistencia, Matricula matricula, String strfecha,String estado) {
+
+        this.alumno = alumno;
+        this.asistencia = asistencia;
+        this.matricula = matricula;
+        this.strfecha = strfecha;
         this.estado = estado;
     }
+
 
     public int getId() {
         return id;
@@ -57,13 +93,22 @@ public class Registro_Asistencia {
         this.matricula = matricula;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
+
+    public String getStrfecha() {
+        return strfecha;
+    }
+
+    public void setStrfecha(String strfecha) {
+        this.strfecha = strfecha;
+    }
+
 
     public String getHora() {
         return hora;
